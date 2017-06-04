@@ -20,7 +20,19 @@ module.exports = {
       		{
       			test: /\.vue$/,
       			loader:"vue-loader"
-      		}
+      		},
+      		{
+				test:/\.(gif|jpg|png)\??.*$/,
+				loader:'url-loader?name=[path][name].[ext]'
+			},
+			{   
+				test: /\.css$/, 
+				loader: 'style-loader!css-loader' 
+			},
+			{
+          		test: /\.(woff|woff2|svg|eot|ttf)\??.*$/,
+         		loader: 'file-loader?name=/css/fonts/[name].[ext]'
+        	}
 		],
 	}
 
